@@ -117,7 +117,7 @@
             if (responseData) {
                 NSString *responseStr = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
                 
-                TWDLog(@"Reverse Auth process returned: %@", responseStr);
+//                TWDLog(@"Reverse Auth process returned: %@", responseStr);
                 
                 NSArray *parts = [responseStr componentsSeparatedByString:@"&"];
                 NSString *lined = [parts componentsJoinedByString:@"\n"];
@@ -128,7 +128,7 @@
                 });
             }
             else {
-                TWALog(@"Reverse Auth process failed. Error returned was: %@\n", [error localizedDescription]);
+//                TWALog(@"Reverse Auth process failed. Error returned was: %@\n", [error localizedDescription]);
             }
         }];
     }
@@ -148,7 +148,7 @@
  */
 - (void)_refreshTwitterAccounts
 {
-    TWDLog(@"Refreshing Twitter Accounts \n");
+//    TWDLog(@"Refreshing Twitter Accounts \n");
     
     if (![TWAPIManager hasAppKeys]) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:ERROR_TITLE_MSG message:ERROR_NO_KEYS delegate:nil cancelButtonTitle:ERROR_OK otherButtonTitles:nil];
@@ -167,7 +167,7 @@
                 else {
                     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:ERROR_TITLE_MSG message:ERROR_PERM_ACCESS delegate:nil cancelButtonTitle:ERROR_OK otherButtonTitles:nil];
                     [alert show];
-                    TWALog(@"You were not granted access to the Twitter accounts.");
+//                    TWALog(@"You were not granted access to the Twitter accounts.");
                 }
             });
         }];
